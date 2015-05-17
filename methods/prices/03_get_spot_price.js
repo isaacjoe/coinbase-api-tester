@@ -1,5 +1,5 @@
 /**
- * Get current BTC spot price
+ * Get the spot price of bitcoin
  *
  * Docs:
  *   https://developers.coinbase.com/api#get-the-spot-price-of-bitcoin
@@ -10,7 +10,13 @@
 
 var client = require('../../client.js');
 
-client.getSpotPrice({"qty": 1, "currency": "USD"}, function(err, price) {
+
+var args = {
+  qty: 1,
+  currency: 'USD'
+};
+
+client.getSpotPrice(args, function(err, price) {
   if (err) {
     console.log(err);
   } else {
