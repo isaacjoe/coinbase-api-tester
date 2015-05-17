@@ -1,5 +1,5 @@
 /**
- * Get current BTC sell price
+ * Get the sell price for bitcoin
  *
  * Docs:
  *   https://developers.coinbase.com/api#get-the-sell-price-for-bitcoin
@@ -10,7 +10,13 @@
 
 var client = require('../../client.js');
 
-client.getSellPrice({"qty": 1, "currency": "USD"}, function(err, price) {
+
+var args = {
+  qty: 1,
+  currency: 'USD'
+};
+
+client.getSellPrice(args, function(err, price) {
   if (err) {
     console.log(err);
   } else {
