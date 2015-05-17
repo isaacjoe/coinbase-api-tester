@@ -11,7 +11,6 @@
 var async   = require('async');
 var client  = require('../../client.js');
 var Account = require('coinbase').model.Account;
-var Button  = require('coinbase').model.Button;
 
 
 async.waterfall([
@@ -49,6 +48,7 @@ async.waterfall([
         console.log(err);
       } else {
         console.log(result);
+        console.log(result.code);
       }
     });
   }
