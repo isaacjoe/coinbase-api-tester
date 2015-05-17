@@ -4,17 +4,14 @@
  * Docs:
  *   https://developers.coinbase.com/api#start-a-transfer-that-is-in-the-created-state
  * Lib:
- *   Accounts.prototype.getTransfer
- *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
+ *   Transfer.prototype.commmit
+ *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Transfers.js
  */
  
 var client = require('../../client.js');
 var Account = require('coinbase').model.Account;
 var Transfer = require('coinbase').model.Transfer;
 var async  = require('async');
-
-//work in progress. To complete; will need to initiate a buy or sell with
-//'commit = false' in order to complete with order with /transfers/:id:/commit
 
 async.waterfall([
   function(callback){
