@@ -52,9 +52,9 @@ async.waterfall([
       }
     });
 
-  }, function(myAccount, result) {
+  }, function(myAccount, buttonData) {
 
-    var myButton = new Button(client, result, myAccount);
+    var myButton = new Button(client, buttonData, myAccount);
 
     myButton.createOrder(function(err, result) {
       if (err) {
