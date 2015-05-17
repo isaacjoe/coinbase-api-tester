@@ -1,5 +1,5 @@
 /**
- * List user's payment methods
+ * Show a payment method
  *
  * Docs:
  *   https://developers.coinbase.com/api#show-a-payment-method
@@ -10,6 +10,7 @@
 
 var client = require('../../client.js');
 var async  = require('async');
+
 
 async.waterfall([
   function(callback){
@@ -35,4 +36,3 @@ async.waterfall([
     });
   }
 ]);
-
