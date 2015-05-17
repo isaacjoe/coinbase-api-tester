@@ -48,7 +48,6 @@ async.waterfall([
         console.log(err);
       } else {
         console.log(result);
-        console.log(result.code);
       }
     });
   }
