@@ -38,7 +38,7 @@ async.waterfall([
       notes: 'Sample request'
     };
 
-    //Get a list of transactions
+    // Get a list of transactions
     myAccount.requestMoney(args, function(err, request) {
       if (err) {
         console.log(err);

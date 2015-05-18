@@ -13,10 +13,6 @@ var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
 
 
-var args = {
- name: 'Satoshi Wallet'
-};
-
 async.waterfall([
   function(callback) {
     // Fetch an account
@@ -32,6 +28,10 @@ async.waterfall([
     var myAccount = new Account(client, sampleAccount);
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
+
+    var args = {
+     name: 'Satoshi Wallet'
+    };
 
     myAccount.modify(args, function(err, modifiedAcct) {
       if (err) {

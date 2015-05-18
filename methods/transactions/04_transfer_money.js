@@ -13,14 +13,6 @@ var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
 
 
-// We'll get a 'to' account ID in the getAccounts method call below.
-// Alternatively, you can specify one here.
-var args = {
-  // to: 'A1234',
-  amount : '1.234',
-  notes  : 'Sample transfer for you'
-};
-
 async.waterfall([
   function(callback) {
     // Fetch an account
@@ -42,7 +34,12 @@ async.waterfall([
     // Alternatively, you can manually specify a 'from' account ID if needed
     // var myAccount = new Account(client, {id: 'A1234'});
 
-    args.to = toAccount.id;
+    var args = {
+      to: toAccount.id,
+      amount: '0.1234',
+      notes: 'Sample transfer for you'
+    };
+
     // Alternatively, you can manually specify a 'to' account ID if needed
     // args.to = 'A1234';
 
