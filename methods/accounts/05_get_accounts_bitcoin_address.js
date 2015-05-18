@@ -1,10 +1,10 @@
 /**
- * Create a new bitcoin address for an account
+ * Get account’s bitcoin address
  *
  * Docs:
- *   https://developers.coinbase.com/api#create-a-new-bitcoin-address-for-an-account
+ *   https://developers.coinbase.com/api#get-account39s-bitcoin-address
  * Lib:
- *   Account.prototype.createAddress
+ *   Account.prototype.getAddress
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
@@ -12,11 +12,6 @@ var async   = require('async');
 var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
 
-
-var args = {
- callback_url: 'http://www.example.com/callback',
- label: 'Dalmation donations'
-};
 
 async.waterfall([
   function(callback) {
@@ -34,9 +29,9 @@ async.waterfall([
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
 
-    myAccount.createAddress(args, function(err, addressObj) {
+    myAccount.getAddress(function(err, addressObj) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(addressObj);
       }
