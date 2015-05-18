@@ -10,6 +10,7 @@
 
 var client = require('../../client.js');
 
+
 client.getPaymentMethods(function(err, payments) {
   if (err) {
     console.log(err);

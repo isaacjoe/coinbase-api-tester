@@ -10,6 +10,7 @@
 
 var client = require('../../client.js');
 
+
 client.getCurrentUser(function(err, accounts) {
   if (err) {
     console.log(err);

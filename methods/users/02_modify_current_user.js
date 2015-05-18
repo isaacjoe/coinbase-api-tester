@@ -12,6 +12,7 @@ var client = require('../../client.js');
 var User = require('coinbase').model.User;
 var async  = require('async');
 
+
 var args = {
   native_currency: 'GBP'
 };

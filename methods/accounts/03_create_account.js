@@ -10,6 +10,7 @@
 
 var client = require('../../client.js');
 
+
 var args = {
   name: 'Savings Wallet'
 };

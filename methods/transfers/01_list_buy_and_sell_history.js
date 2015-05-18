@@ -12,6 +12,7 @@ var client = require('../../client.js');
 var Account = require('coinbase').model.Account;
 var async  = require('async');
 
+
 async.waterfall([
   function(callback) {
     // Fetch an account ID
