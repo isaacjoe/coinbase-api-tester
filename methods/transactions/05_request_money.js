@@ -2,24 +2,17 @@
  * Request bitcoin from an email address
  *
  * Docs:
- * https://developers.coinbase.com/api#request-money
+ *   https://developers.coinbase.com/api#request-money
  *
  * Lib:
- * Client.prototype.requestMoney
- * https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
+ *   Client.prototype.requestMoney
+ *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
 var async = require('async');
 var Account = require('coinbase').model.Account;
 var client = require('../../client.js');
 
-var args = {
-// See docs for options
-            'from' : 'user1@example.com',
-            'amount_string' : '1.234',
-            'amount_currency_iso' : 'USD',
-            'notes' : 'Sample request'
-         };
 
 async.waterfall([
   function(callback) {
@@ -28,7 +21,6 @@ async.waterfall([
       if (err) {
         console.log(err);
       } else {
-        // console.log(accounts);
         callback(null, accounts[0]);
       }
     });
@@ -38,8 +30,16 @@ async.waterfall([
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
 
+    // See docs for options
+    var args = {
+      from: 'user1@example.com',
+      amount_string: '1.234',
+      amount_currency_iso: 'USD',
+      notes: 'Sample request'
+    };
+
     //Get a list of transactions
-    myAccount.requestMoney( args, function(err, request) {
+    myAccount.requestMoney(args, function(err, request) {
       if (err) {
         console.log(err);
       } else {
