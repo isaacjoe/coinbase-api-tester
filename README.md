@@ -1,6 +1,6 @@
 # Coinbase API Tester
 
-For Coinbase API v1.
+For Coinbase API v2.
 
 ## Purpose
 
